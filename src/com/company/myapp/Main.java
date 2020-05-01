@@ -13,7 +13,6 @@ public class Main {
         CustomersList customerslist = new CustomersList();
         customerID.manageCustList(customerslist);
 
-        System.out.println(customers.);
         //method invocation, or method call, method usage
 
         /*float total = calc(50,4.5f);
