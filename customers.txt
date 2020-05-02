@@ -1,2 +1,1 @@
-Surname: Anna, Name: Kentistou, Address: Gortynias, Email: anna@gmail.com, Phone Number: 6978969685
-Surname: Aris, Name: Kentistos, Address: Gortynias, Email: aris@gmail.com, Phone Number: 6978996989
+Anna, Kentistou, Tropea, anna@gmail.com, 697778966

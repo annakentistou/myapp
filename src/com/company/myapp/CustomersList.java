@@ -33,11 +33,16 @@ public class CustomersList {
         try {
             PrintWriter printWriter = new PrintWriter(new File(filename));
             for (Customer c : customers) {
-                printWriter.println("Surname: "+c.getSurname()
+                printWriter.println(c.getSurname()
+                        + ", " + c.getName()
+                        + ", " + c.getAddress()
+                        + ", " + c.getEmail()
+                        + ", " + c.getTel());
+              /*  printWriter.println("Surname: "+c.getSurname()
                         + ", " +"Name: "+ c.getName()
                         + ", " +"Address: " + c.getAddress()
                         + ", " +"Email: " + c.getEmail()
-                        + ", " +"Phone Number: " + c.getTel());
+                        + ", " +"Phone Number: " + c.getTel());*/
             }
             printWriter.close();
         } catch (FileNotFoundException e) {
@@ -62,7 +67,7 @@ public class CustomersList {
 
             }
         } catch (Exception e) {
-
+            System.out.println("File can't be loaded");
         }
     }
 

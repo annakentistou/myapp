@@ -62,7 +62,6 @@ public class UI {
         price = scanner.nextFloat();
         System.out.println("Give the product quantity");
         quantity = scanner.nextInt();
-        //System.out.println("Give an index to remove");
 
         Product product = new Product(code, name, price, quantity);
         return product;

@@ -67,10 +67,15 @@ public class Basket {
         try {
             PrintWriter printWriter = new PrintWriter(new File(filename));
             for(Product p : products) {
-                printWriter.println("Product code: "+p.getCode()
-                        +", " +" Product name: " + p.getName()
-                        + ", " +"Product Price: "+ p.getPrice()
-                        + ", " +"Quantity: " + p.getQuantity());
+
+                printWriter.println(p.getCode()
+                        +", " +p.getName()
+                        +", " +p.getPrice()
+                        +", " +p.getQuantity());
+                /* printWriter.println("Product code: "+p.getCode()
+                        +", " +"Product name: "+p.getName()
+                        +", " +"Product Price: "+p.getPrice()
+                        +", " +"Quantity: "+p.getQuantity());*/
             }
             printWriter.close();
         } catch (FileNotFoundException e) {
