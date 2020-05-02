@@ -1,1 +1,2 @@
-8963, egg, 0.2, 12
+Product code: 7412,  Product name: egg, Product Price: 0.1, Quantity 12
+Product code: 7456,  Product name: onion, Product Price: 0.05, Quantity 15

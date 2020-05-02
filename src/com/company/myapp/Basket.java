@@ -12,7 +12,6 @@ public class Basket {
 
     public void addProduct(Product product) {
         products.add(product);
-
     }
 
     public void displayProducts() {
@@ -31,13 +30,13 @@ public class Basket {
     }
 
     public void removeProduct(int index) {
-        if (index > 0 && index < products.size()) {
+        //defensive programming
+        if (index >=0 && index < products.size()) {
             products.remove(index);
         }
     }
 
     public void clearProducts() {
-
         products.clear();
     }
 
@@ -68,7 +67,10 @@ public class Basket {
         try {
             PrintWriter printWriter = new PrintWriter(new File(filename));
             for(Product p : products) {
-                printWriter.println(p.getCode() + ", " + p.getName() + ", " + p.getPrice() + ", " + p.getQuantity());
+                printWriter.println("Product code: "+p.getCode()
+                        +", " +" Product name: " + p.getName()
+                        + ", " +"Product Price: "+ p.getPrice()
+                        + ", " +"Quantity: " + p.getQuantity());
             }
             printWriter.close();
         } catch (FileNotFoundException e) {
@@ -77,12 +79,13 @@ public class Basket {
 
     }
     public void loadBasket(String filename){
+        //clear basket before loading
         products.clear();
         try {
             Scanner scanner = new Scanner(new File(filename));
             while (scanner.hasNextLine()){
-                String line = scanner.nextLine();
-                String[] words = line.split(",");
+                String line = scanner.nextLine(); //read a row
+                String[] words = line.split(", ");
                 Product product = new Product(words[0],
                         words[1],
                         Float.parseFloat(words[2]),

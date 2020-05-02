@@ -19,7 +19,7 @@ public class CustomersList {
 
     public void removeCustomerFromList(int index) {
 
-        if (index < 0 && index < customers.size()) {
+        if (index >= 0 && index < customers.size()) {
             customers.remove(index);
         }
     }
@@ -33,7 +33,11 @@ public class CustomersList {
         try {
             PrintWriter printWriter = new PrintWriter(new File(filename));
             for (Customer c : customers) {
-                printWriter.println(c.getSurname() + ", " + c.getName() + ", " + c.getAddress() + ", " + c.getEmail() + ", " + c.getTel());
+                printWriter.println("Surname: "+c.getSurname()
+                        + ", " +"Name: "+ c.getName()
+                        + ", " +"Address: " + c.getAddress()
+                        + ", " +"Email: " + c.getEmail()
+                        + ", " +"Phone Number: " + c.getTel());
             }
             printWriter.close();
         } catch (FileNotFoundException e) {
@@ -48,7 +52,7 @@ public class CustomersList {
             Scanner scanner = new Scanner(new File(filename));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                String[] words = line.split(",");
+                String[] words = line.split(", ");
                 Customer customer = new Customer(words[0],
                         words[1],
                         words[2],

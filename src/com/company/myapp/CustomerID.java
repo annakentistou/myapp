@@ -8,9 +8,9 @@ public class CustomerID {
         System.out.println("1. Add a Customer to list "
                 + "2. Remove a Customer from list "
                 + "3. Display Customers' List "
-                + "4. Clear "
-                + "5. Save Customers List "
-                + "6. Load Customers List "
+                + "4. Clear Customers' List "
+                + "5. Save Customers' List "
+                + "6. Load Customers' List "
                 + "0. Exit");
 
         int choice;
@@ -68,6 +68,7 @@ public class CustomerID {
                     customerslist.addCustomer(customer);
                     break;
                 case REMOVE:
+                    System.out.println("Give an index to remove a product");
                     Scanner scanner = new Scanner(System.in);
                     int index = scanner.nextInt();
                     customerslist.removeCustomerFromList(index);
@@ -85,6 +86,7 @@ public class CustomerID {
                     break;
                 case LOAD:
                     customerslist.loadCustList("customers.txt");
+                    break;
                 case ERROR:
                     System.out.println("You gave erroneous input");
                     break;
