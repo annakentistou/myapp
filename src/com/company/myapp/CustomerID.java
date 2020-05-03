@@ -79,13 +79,13 @@ public class CustomerID {
                 case CLEAR:
                     customerslist.clearCustList();
                     break;
-                case EXIT:
-                    break;
                 case SAVE:
                     customerslist.saveCustList("customers.txt");
                     break;
                 case LOAD:
                     customerslist.loadCustList("customers.txt");
+                    break;
+                case EXIT:
                     break;
                 case ERROR:
                     System.out.println("You gave erroneous input");

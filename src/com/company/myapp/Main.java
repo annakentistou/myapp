@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        /*UI ui = new UI();
+        UI ui = new UI();
         Basket basket = new Basket();
-        ui.manageBasket(basket);*/
+        ui.manageBasket(basket);
 
         CustomerID customerID = new CustomerID();
         CustomersList customerslist = new CustomersList();

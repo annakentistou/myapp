@@ -91,14 +91,15 @@ public class Basket {
             while (scanner.hasNextLine()){
                 String line = scanner.nextLine(); //read a row
                 String[] words = line.split(", ");
-                Product product = new Product(words[0],
+                Product product = new ColorProduct(words[0],
                         words[1],
                         Float.parseFloat(words[2]),
-                        Integer.parseInt(words[3]));
+                        Integer.parseInt(words[3]),"black");
                 products.add(product);
 
             }
         } catch (Exception e) {
+            System.out.println("File can't be loaded");
 
         }
     }

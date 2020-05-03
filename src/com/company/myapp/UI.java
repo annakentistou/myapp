@@ -7,13 +7,13 @@ public class UI {
     public Choice menu() {
         Choice returnChoice;
         System.out.println("1. Add a product to Basket "
-                + "2. Remove a product "
-                + "3. Display basket "
-                + "4. Clear basket "
-                + "5. Total price of products "
-                + "6. Save my basket "
-                + "7. Load basket "
-                + "0. Exit");
+                        + "2. Remove a product "
+                        + "3. Display basket "
+                        + "4. Clear basket "
+                        + "5. Total price of products "
+                        + "6. Save my basket "
+                        + "7. Load basket "
+                        + "0. Exit");
 
         int choice;
         Scanner scanner = new Scanner(System.in);
@@ -47,13 +47,21 @@ public class UI {
 
     //factory method design pattern
     //create object, a whole method
+    //case where Exceprion throw it
     public Product createProduct() {
         String code;
         String name;
         float price;
         int quantity;
+        String color;
+        String producer;
+        int productType;
+
 
         Scanner scanner = new Scanner(System.in);
+        System.out.println("1. For dairy 2.For color product");
+        productType = scanner.nextInt();
+
         System.out.println("Give the product code");
         code = scanner.next();
         System.out.println("Give the product name");
@@ -63,8 +71,23 @@ public class UI {
         System.out.println("Give the product quantity");
         quantity = scanner.nextInt();
 
-        Product product = new Product(code, name, price, quantity);
-        return product;
+        Product product;
+        switch (productType){
+            case 1:
+                System.out.println("Give producer");
+                producer = scanner.next();
+                product = new DairyProduct(code, name, price, quantity,producer);
+                return product;
+            case 2:
+                System.out.println("Give color");
+                color = scanner.next();
+                product = new ColorProduct(code, name, price, quantity,color);
+                return product;
+            default:
+                return null;
+        }
+
+
     }
 
     public void manageBasket(Basket basket) {
@@ -76,7 +99,8 @@ public class UI {
                 case EXIT:
                     break;
                 case ADD:
-                    Product product = createProduct();
+                    Product product = null;
+                    product = createProduct();
                     basket.addProduct(product);
                     break;
                 case REMOVE:
